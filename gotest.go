@@ -55,8 +55,24 @@ func tutThree() {
 		fmt.Println("just to use some variables, both are = to a but diff data types!", b, x)
 }
 
+func tutFour() {
+	//learning about pointers
+
+	x := 15
+	a := &x //memory address <--- point to something use &
+	//to read through use * (read what is at that memory address)
+	fmt.Println(a)
+	fmt.Println(*a)
+	*a = 5
+	fmt.Println("reading through the memory address at a",x)
+	*a = *a**a
+	fmt.Println("now what is a?", x)
+	fmt.Println("and a?", *a)
+}
+
 func main() {
-	foo()
-	getRandom()
-	tutThree()
+	// foo()
+	// getRandom()
+	// tutThree()
+	tutFour()
 }
