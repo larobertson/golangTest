@@ -1,5 +1,6 @@
 package main
 
+//unused imports will cause an error
 import ("fmt"
 				"math"
 				"math/rand")
@@ -11,7 +12,7 @@ import ("fmt"
 	// example, run in terminal: go doc fmt
 			//or go doc math/rand Intn
 
-func add(x float64,y float64) float64 {
+func add(x,y float64) float64 {
 	return x+y
 }
 
@@ -24,12 +25,38 @@ func getRandom() {
 	fmt.Println("A number from 1-100", rand.Intn(100))
 }
 
+func multiple(a,b string) (string, string) {
+	//we have to specify every return type, even if they are the same return type
+	return a,b
+}
+
+func tutThree() {
+		//define a variable:
+		//previously:
+		// var num1,num2 float64 = 5.6, 9.5
+		num1,num2 := 5.6, 9.5
+		//when inside a function we don't have to necessarily give it a type
+		//but the type can't change once it compiles!
+		//variables stay ONE type
+		//however, to change later on we need to make sure we declare type
+	
+		fmt.Println("this is what our add function does:", add(num1,num2))
+		//program will not work with unused variables
+	
+		w1, w2 := "Hey", "there"
+	
+		fmt.Println(multiple(w1,w2))
+	
+		//to convert a type:
+		var a int = 62
+		var b float64 = float64(a)
+	
+		x := a // x will be type int
+		fmt.Println("just to use some variables, both are = to a but diff data types!", b, x)
+}
+
 func main() {
 	foo()
 	getRandom()
-	//define a variable:
-	var num1 float64 = 5.6
-	var num2 float64 = 9.5
-
-	fmt.Println("this is what our add function does:", add(num1,num2))
+	tutThree()
 }
