@@ -10,5 +10,6 @@ func foo() {
 }
 
 func main() {
+	foo()
 	fmt.Println("A number from 1-100", rand.Intn(100))
 }
