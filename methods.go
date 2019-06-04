@@ -21,6 +21,10 @@ const kmhMultiple float64 = 1.60934
 		// saying type car associates it with the car struct
 		return float64(c.gasPedal) * (c.topSpeedKmh/usixteenbitmax)
 	}
+
+	func (c car) mph() float64 {
+		return float64(c.gasPedal) * (c.topSpeedKmh/usixteenbitmax/kmhMultiple)
+	}
 	
 	func main(){
 		// best way to do this:
@@ -33,4 +37,5 @@ const kmhMultiple float64 = 1.60934
 	
 		fmt.Println(aCar.gasPedal)
 		fmt.Println(aCar.kmh())
+		fmt.Println(aCar.mph())
 	}
