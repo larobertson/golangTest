@@ -1,9 +1,14 @@
 package main
 
-import "fmt"
-import "math"
+import ("fmt"
+				"math"
+				"math/rand")
 // fmt is format
 
+func foo() {
+	fmt.Println("The square root of 4 is", math.Sqrt(4))
+}
+
 func main() {
-	fmt.Println("Hello Go!")
+	fmt.Println("A number from 1-100", rand.Intn(100))
 }
