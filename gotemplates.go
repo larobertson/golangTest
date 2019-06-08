@@ -12,7 +12,7 @@ type NewsAggPage struct {
 func newsAggHandler(w http.ResponseWriter, r *http.Request) {
 	p := NewsAggPage{Title: "Amazing News Aggregator", News: "some news"}
 	t, _ := template.ParseFiles("basictemplating.html")
-	t.execute(w, p)
+	t.Execute(w, p)
 }
 
 func IndexHandler(w http.ResponseWriter, r *http.Request) {
