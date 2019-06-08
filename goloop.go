@@ -10,6 +10,7 @@ func main() {
 		fmt.Println(i)
 	}
 
+	// more commonly loops will look like the one below in Go
 	j:=0
 	for j < 10 {
 		fmt.Println(j)
