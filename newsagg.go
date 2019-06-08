@@ -5,20 +5,27 @@ import ("fmt"
 				"io/ioutil"
 				"encoding/xml")
 
+// type SitemapIndex struct {
+// 	Locations []Location `xml:"sitemap"`
+// 	// That [] is a slice of type Location
+// 	// xml:"sitemap" references a <sitemap> xml tag
+// 	// This essentially tells us to extract the value from that tag
+// }
+
+// type Location struct {
+// 	Loc string `xml:"loc"`
+// 	// same here as above, we want to parse a <loc> tag
+// }
+
+// func (l Location) String() string {
+// 	return fmt.Sprintf(l.Loc)
+// }
+
 type SitemapIndex struct {
-	Locations []Location `xml:"sitemap"`
-	// That [] is a slice of type Location
-	// xml:"sitemap" references a <sitemap> xml tag
-	// This essentially tells us to extract the value from that tag
-}
-
-type Location struct {
-	Loc string `xml:"loc"`
-	// same here as above, we want to parse a <loc> tag
-}
-
-func (l Location) String() string {
-	return fmt.Sprintf(l.Loc)
+	Locations []string `xml:"sitemap>loc"`
+	// Refactoring SitemapIndex struct
+	// tells it to look at sitemap then at loc
+	// tells us that we want a slice of type string
 }
 
 func main() {
